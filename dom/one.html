@@ -4,11 +4,71 @@
     <meta charset="UTF-8">
 
     <title>DOM learning</title>
+    <style>
+        .bg-black {
+            background-color: black;
+            color: white;
+            /* padding: 20px; */
+        }
+    </style>
 </head>
-<body>
-    <div class="bg-black">
-        <h1 class="heading">DOM learning on Chai aur code</h1>
+<body class="bg-black">
+    <div>
+        <h1 id="title" class="heading">DOM learning on Chai aur code <span style="display: none">test text</span></h1>
+        <h2>Lorem ipsum dolor sit.</h2>
+        <h2>Lorem ipsum dolor sit amet consectetur.</h3>
+        <h2>Lorem ipsum dolor sit amet consectetur.</h3>
         <p>Lorem ipsum dolor sit amet.</p>
+        <ul>
+            <li>One</li>
+            <li>Two</li>
+            <li>Three</li>
+        </ul>
+        <ol>
+            <li class="list-item">One</li>
+            <li class="list-item">Two</li>
+            <li class="list-item">Three</li>
+            <li class="list-item">Four</li>
+
+        </ol>
     </div>
 </body>
 </html>
+
+
+
+
+<!-- title.innerText
+'DOM learning on Chai aur code'
+title.textContent
+'DOM learning on Chai aur code test text' 
+title.innerHTML
+'DOM learning on Chai aur code <span style="display: none">test text</span>'
+
+here we can see that innerText (visible text )is ignoring the message in span to 
+display none whereas in textContent we can see the span content as well. innerHTML shows the whole HTML text-->
+
+<!-- const ul = document.querySelector('ul')
+undefined
+const firstli = ul.querySelector('li')
+undefined
+firstli.style.backgroundColor = 'green'
+'green' 
+we can do nested query selectors as well.
+-->
+
+<!-- 
+Stuff like NodeList, HTML Collection etc are not actually Arrays in Js so prototyping is very much limited unlike array 
+But we can reference -->
+
+<!-- const tempLiList = document.querySelectorAll("ol")
+undefined
+tempLiList
+NodeList [ol]0: ollength: 1[[Prototype]]: NodeListentries: ƒ entries()forEach: ƒ forEach()item: ƒ item()keys: ƒ keys()length: (...)values: ƒ values()constructor: ƒ NodeList()Symbol(Symbol.iterator): ƒ values()Symbol(Symbol.toStringTag): "NodeList"get length: ƒ length()[[Prototype]]: Object
+tempLiList.forEach((l) => {
+    l.style.backgroundColor = 'red'
+}) 
+here we can see how forEach works for the NodeList
+Array.from() can be used to convert Nodelist or HTML Collection to array -->
+
+<!-- Another good point is that we can carry out basic iterations like for and if on these non array objects -->
