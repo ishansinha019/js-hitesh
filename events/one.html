@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html events</title>
+</head>
+<body>
+    <ul id="list">
+        <li id="a">A</li>
+        <li id="b">B</li>
+        <li id="c">C</li>
+        <li id="d">D</li>
+        <li><a href="https://google.com" id="google">Hello</a></li>
+    </ul>
+</body>
+<script>
+    // // false is the default value, so we can omit it
+    // // List of e - properties we use : type, timestamp, target, defaultPrevented, toElement, srcElement, currentTarget,
+    // // clientX, clientY, screenX, screenY
+    // // altKey, ctrlKey, shiftKey, keyCode, which is used for keyboard events, but not for mouse events
+    // document.getElementById('list').addEventListener('click', (e) => {
+    //     console.log('clicked on the list item'); // e is the event object, it has a lot of properties and methods
+    // }, false); 
+    // document.getElementById('d').addEventListener('click', (e) => {
+    //     console.log('clicked on the element d'); 
+    // }, false); 
+
+    // // False is on both the events, so the event will bubble up (event propogation) to the parent element, which is the list in this case
+    // document.getElementById('list').addEventListener('click', (e) => {
+    //     console.log('clicked on the list item'); // e is the event object, it has a lot of properties and methods
+    // }, true); 
+    // document.getElementById('d').addEventListener('click', (e) => {
+    //     console.log('clicked on the element d'); 
+    // }, true); 
+    // // The above two events are the same, but the second one is using event capturing, which is the opposite of event bubbling
+    // // In event capturing, the event is captured by the parent element first, and then it is passed down to the child elements  
+
+    // // use stop propagation to stop the event from bubbling up or capturing down
+    // document.getElementById('d').addEventListener('click', (e) => {
+    //     console.log('clicked on the element d'); 
+    //     e.stopPropagation(); // this will stop the event from bubbling up to the parent element
+    // }, false);
+
+    // document.getElementById('google').addEventListener('click', (e) => {
+    //     e.preventDefault(); // this will prevent the default action of the event, which is to navigate to the link
+    //     e.stopPropagation(); // this will stop the event from bubbling up to the parent element
+    // })
+
+    //// Let's do an exercise, when we click on the list item, we want it to dissappear.
+    document.querySelector('#list').addEventListener('click', (e) => {
+        let removeIt = e.target;
+        removeIt.remove();
+    })
+</script>
+</html>
+6
