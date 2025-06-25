@@ -32,4 +32,5 @@
 const iceTeaPrice = 100
 iceTeaPrice >=80 ? console.log("Yes") : console.log("No");
 
+
   
