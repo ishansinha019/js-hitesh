@@ -100,31 +100,32 @@
 //     },1000)
 // }) 
 
-// import fetch from 'node-fetch'
-// import * as fetch from 'node-fetch'
-// globalThis.fetch = fetch
-// async function getUser() {
-//     try {
-//         const response = await fetch('https://jsonplaceholder.typicode.com/todos/1')
-//         const data = await response.json()
-//         console.log(data);
-//     } catch (error) {
-//         console.log("Error encountered",error);
-        
-//     }
-    
-// }
-// getUser()
 
-fetch('https://jsonplaceholder.typicode.com/todos/1')
-.then((response) => {
-    return response.json()
-})
-.then((data) => {
-    console.log(data);
+
+async function getUser() {
+    try {
+        const response = await fetch('https://api.github.com/users/hiteshchoudhary')
+        const data = await response.json()
+        console.log(data);
+    } catch (error) {
+        console.log("Error encountered",error);
+        
+    }
     
-})
-.catch((error) => {
-    console.log("error",error);
+}
+getUser()
+
+// fetch('https://jsonplaceholder.typicode.com/todos/1')
+// .then((response) => {
+//     return response.json()
+// })
+// .then((data) => {
+//     console.log(data);
     
-})
+// })
+// .catch((error) => {
+//     console.log("error",error);
+    
+// })
+
+ 
